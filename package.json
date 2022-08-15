@@ -1,0 +1,29 @@
+{
+  "name": "sales-project",
+  "version": "1.0.0",
+  "description": "Applying as an NodeJS Developer:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Niladri310609/SALES-PROJECT.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Niladri310609/SALES-PROJECT/issues"
+  },
+  "homepage": "https://github.com/Niladri310609/SALES-PROJECT#readme",
+  "dependencies": {
+    "aws-sdk": "^2.1194.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.0",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.5.2",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^2.0.19"
+  }
+}
