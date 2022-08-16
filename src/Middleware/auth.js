@@ -40,21 +40,20 @@ const authorization =async (req, res, next) => {
     try {
 
         let tokenUserId = req.userId
-        let userId = req.params.userId.toString().trim()
+         let userId = req.params.userId.trim()
+       
 
         
         if (!isValidObjectId(userId)) {
             return res.status(400).send({ status: false, message: "Invalid User Id" })
         }
 
-        /*const userExist = await userModel.findOne({_id:userId})
-        if(!userExist){
-            return res.status(404).send({ status: false, message: "User Id does not exist" })
-        }*/
+        
 
         if (tokenUserId.toString() !== userId) {
             return res.status(403).send({ status: false, message: "unauthorized access" })
         }
+        
         next()
 
     } catch (error) {

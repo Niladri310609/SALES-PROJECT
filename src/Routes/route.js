@@ -3,7 +3,8 @@ const router = express.Router()
 
 const{createUser,loginUser} =require('../Controllers/UserController')
 const {authentication,authorization} = require('../Middleware/auth')
-const{createProduct} = require("../Controllers/ProductController")
+const{createProduct,getProduct} = require("../Controllers/ProductController")
+ const {getRevenueByDate} = require("../Controllers/ProductController")
 
 
 
@@ -15,6 +16,9 @@ router.post("/login",loginUser)
 //Product's Api
 
  router.post("/users/:userId/product",authentication,authorization,createProduct)
+ router.get("/users/:userId/topProducts",authentication,authorization,getProduct)
+ router.get("/users/:userId/dailyrevenue",authentication,authorization,getRevenueByDate)
+
 
 
 //if api is invalid OR wrong URL

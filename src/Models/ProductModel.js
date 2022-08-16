@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+ const moment = require("moment")
 
 const productSchema = new mongoose.Schema({
     name: { type: String, required: true, unique: true, trim: true },
@@ -7,18 +8,11 @@ const productSchema = new mongoose.Schema({
     currencyId: { type: String, required: true, enum: ["INR"] },
     quantity: { type: Number, required: true, minLen: 1 },
     totalPrice: { type: Number,required: true},
-    revenueDate:{ type:String, default : new Date().toLocaleString() }
+    revenueDate:{ type:String, required:true, trim: true}
 
 }, { timestamps: true });
 
 module.exports = mongoose.model('Product', productSchema)
 
 
-/*Coca-Cola or Coke. ...
-/*Pepsi. ...
-Sprite. ...
-Thums Up. ...
-Fanta. ...
-Maaza. ...
-7Up. ...
-Mirinda.  */
+ 
