@@ -44,30 +44,19 @@ const isValidPassword = function (password) {
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,15}$/
     return passwordRegex.test(password)
 }
-const isValidPincode = function (pincode) {
-    if (!pincode || pincode.toString().trim().length == 0 || pincode.toString().trim().length != 6 ) return false;
-    if(isNaN(Number(pincode.toString().trim())))return false
-    return true;
-    
-  }
-  const isValidNumber=function(number){
-    if(!number || number.toString().trim().length==0) return false;
-    if(isNaN(Number(number.toString().trim()))) return false
-    return true
-}
-  const validInstallment = function isInteger(value) {
-    if(value < 0) return false
-     if(value % 1 == 0 ) return true
-}
+
+
+ //quantity validation
 const validQuantity = function isInteger(value) {
     if(value < 1) return false
      if(value % 1 == 0 ) return true
 }
-
+// date validation
 const isValidDate =function(date){
     const dateRegex = /^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/i
     return dateRegex.test(date)
 }
 
 
-module.exports={isValid,isValidRequestBody,isValidObjectId,isValidEmail, isValidScripts,isValidNumber,isValidPhone,isValidPassword,isValidName,validString,validQuantity,isValidDate}
+module.exports={isValid,isValidRequestBody,isValidObjectId,isValidEmail, isValidScripts,isValidPhone,isValidPassword,isValidName,validString,validQuantity,isValidDate}
+
